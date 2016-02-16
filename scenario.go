@@ -4,7 +4,11 @@ import (
   "time"
 )
 
-type Item struct {
+type HttpAction struct {
 	Addr   string
-	params interface{}
+	// GET, REMOVE, POST, DELETE, UPDATE
+	Method string
+	// Breif description of this action
+	Title  string
+	Params interface{}
 }
