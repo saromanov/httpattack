@@ -22,6 +22,7 @@ func New()*Attack{
 	return attack
 }
 
+// Run provides main method for running items
 func (attack* Attack) Run() error {
 	for i := 0; i < attack.Users; i++ {
 		go run()
