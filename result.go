@@ -5,5 +5,9 @@ import (
 )
 
 func provideResponse(method string, client *http.Client) error {
-	resp, err := http.NewRequest()
+	/*_, err := http.NewRequest(method)
+	if err != nil {
+		return
+	}*/
+	return nil
 }

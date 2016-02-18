@@ -1,7 +1,7 @@
-type httpattack
+package httpattack
 
 import (
-  "time"
+  //"time"
 )
 
 type HttpAction struct {
@@ -10,5 +10,7 @@ type HttpAction struct {
 	Method string
 	// Breif description of this action
 	Title  string
+	//Accept
+	Accept  string
 	Params interface{}
 }
