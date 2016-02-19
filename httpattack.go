@@ -36,19 +36,25 @@ func (attack *Attack) run() {
 	defer workers.Done()*/
 }
 
-func buildHttpRequest(httpAction HttpAction, sessionMap map[string]string) *http.Request {
+func buildHttpRequest(httpAction HttpAction, sessionMap map[string]string) (*http.Request, error) {
 	var req *http.Request
 	var err error
 	if httpAction.Method != "" {
 		//reader := strings.NewReader(SubstParams(sessionMap, httpAction.Body))
 		req, err = http.NewRequest(httpAction.Method, httpAction.Addr, nil)
+		if err != nil {
+			return nil, err
+		}
 	} else {
 		req, err = http.NewRequest(httpAction.Method, httpAction.Addr, nil)
+		if err != nil {
+			return nil, err
+		}
 	}
 	if err != nil {
 		log.Fatal(err)
 	}
 	req.Header.Add("Accept", httpAction.Accept)
 
-	return req
+	return req, nil
 }
