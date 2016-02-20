@@ -15,6 +15,7 @@ type Attack struct {
 	//your client
 	Client *http.Client
 	// Scenarios
+	Scenarios *Schenario
 }
 
 func New() *Attack {
