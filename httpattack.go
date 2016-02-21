@@ -18,6 +18,7 @@ type Attack struct {
 	Scenarios *Schenario
 }
 
+// New initialize new http attack item
 func New() *Attack {
 	attack := new(Attack)
 	return attack
