@@ -34,8 +34,7 @@ func (attack *Attack) Run() error {
 }
 
 func (attack *Attack) run() {
-	/*workers.Add(1)
-	defer workers.Done()*/
+	
 }
 
 func buildHttpRequest(httpAction HttpAction, sessionMap map[string]string) (*http.Request, error) {
