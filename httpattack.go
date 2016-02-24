@@ -34,7 +34,10 @@ func (attack *Attack) Run() error {
 }
 
 func (attack *Attack) run() {
-	
+	req, err := buildHttpRequest(action, map[string]string{})
+	if err != nil {
+		return
+	}
 }
 
 func buildHttpRequest(httpAction HttpAction, sessionMap map[string]string) (*http.Request, error) {
