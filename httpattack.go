@@ -40,6 +40,7 @@ func (attack *Attack) run() {
 	}
 }
 
+// buildHttpRequest is a helpful method for building request
 func buildHttpRequest(httpAction HttpAction, sessionMap map[string]string) (*http.Request, error) {
 	var req *http.Request
 	var err error
