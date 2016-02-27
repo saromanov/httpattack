@@ -12,6 +12,8 @@ type Attack struct {
 	User int
 	// Workers per each user
 	Workers int
+	// File for store results
+	Outputfile string
 	//your client
 	Client *http.Client
 	// Scenarios
