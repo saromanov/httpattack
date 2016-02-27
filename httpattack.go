@@ -40,8 +40,8 @@ func (attack *Attack) run() {
 	}
 }
 
-// buildHttpRequest is a helpful method for building request
-func buildHttpRequest(httpAction HttpAction, sessionMap map[string]string) (*http.Request, error) {
+// buildHTTPRequest is a helpful method for building request
+func buildHTTPRequest(httpAction HttpAction, sessionMap map[string]string) (*http.Request, error) {
 	var req *http.Request
 	var err error
 	if httpAction.Method != "" {
@@ -66,9 +66,9 @@ func buildHttpRequest(httpAction HttpAction, sessionMap map[string]string) (*htt
 
 func buildResponse(req *http.Request) string {
 	resp, err := client.Do(req)
-    if err != nil{
-        log.Fatal(err)
-    }
-    bodyText, err := ioutil.ReadAll(resp.Body)
-    erturn string(bodyText)
+	if err != nil {
+		log.Fatal(err)
+	}
+	bodyText, err := ioutil.ReadAll(resp.Body)
+	return string(bodyText)
 }
