@@ -18,6 +18,8 @@ type Attack struct {
 	Client *http.Client
 	// Scenarios
 	Scenarios *Schenario
+	// Actions config. Should be in json format
+	ActionsConfig  string
 }
 
 // New initialize new http attack item
@@ -35,6 +37,7 @@ func (attack *Attack) Run() error {
 	return nil
 }
 
+// inner call for run
 func (attack *Attack) run() {
 	req, err := buildHttpRequest(action, map[string]string{})
 	if err != nil {
