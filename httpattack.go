@@ -65,6 +65,7 @@ func buildHTTPRequest(httpAction HttpAction, sessionMap map[string]string) (*htt
 		log.Fatal(err)
 	}
 	req.Header.Add("Accept", httpAction.Accept)
+	req.Header.Add("Allowd", "")
 
 	return req, nil
 }
