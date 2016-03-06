@@ -3,6 +3,7 @@ package httpattack
 import (
 	"log"
 	"net/http"
+	"time"
 	//"sync"
 )
 
@@ -39,10 +40,13 @@ func (attack *Attack) Run() error {
 
 // inner call for run
 func (attack *Attack) run() {
+	now := time.Now()
 	req, err := buildHttpRequest(action, map[string]string{})
 	if err != nil {
 		return
 	}
+
+	sub := time.Now().Sub(now)
 }
 
 // buildHTTPRequest is a helpful method for building request
